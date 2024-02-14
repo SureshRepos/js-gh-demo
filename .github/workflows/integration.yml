@@ -20,7 +20,7 @@ jobs:
           type: 'zip'
           filename: 'site.zip'
       - name: Create GitHub release
-        uses: actions/create-release@v4
+        uses: actions/create-release@v1
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with: 
@@ -33,13 +33,13 @@ jobs:
     
     steps:
       - name: Checkout code from repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
       - name: install NPM dependecies
         run: npm install
       - name: Build project assets
         run: npm run build
       - name: Upload Build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v2
         with: 
           name: static-site
           path: .next/
