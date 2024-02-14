@@ -1,6 +1,5 @@
 name: Build Next.js web app
 on: push
-  with: 'master'
 
 jobs:
   build-project:
