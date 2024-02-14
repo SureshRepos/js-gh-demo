@@ -8,7 +8,7 @@ jobs:
     
     steps:
       - name: Checkout code from repo
-        uses: actions\checkout@v4
+        uses: actions/checkout@v4
       - name: install NPM dependecies
         run: npm install
       - name: Build porject assets
