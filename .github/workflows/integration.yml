@@ -13,3 +13,9 @@ jobs:
         run: npm install
       - name: Build porject assets
         run: npm run build
+      - name: Upload Build artifact
+        uses: actions/upload-artifact@v4
+        with: 
+          name: my-artifact
+          path: path/to/artifact/
+    
