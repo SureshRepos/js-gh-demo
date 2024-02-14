@@ -2,6 +2,19 @@ name: Build Next.js web app
 on: push
 
 jobs:
+  release-project:
+    name: Release Project
+    runs-on: ubuntu-latest
+    needs: build-project
+
+    steps:
+      - name: Download Site Content
+        uses: actions/download-artifact@v4
+        with:
+          name: static-site
+      - name: Display structure of download files
+        run: ls -R
+
   build-project:
     name: Build Project
     runs-on: ubuntu-latest
@@ -19,16 +32,5 @@ jobs:
           name: static-site
           path: .next/
   
-  release-project:
-    name: Release Project
-    runs-on: ubuntu-latest
-    needs: build-project
-
-    steps:
-      - name: Download Site Content
-        uses: actions/download-artifact@v4
-        with:
-          - name: static-site
-      - name: Display structure of download files
-        run: ls -R
+  
     
