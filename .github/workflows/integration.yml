@@ -14,6 +14,11 @@ jobs:
           name: static-site
       - name: Display structure of download files
         run: ls -R
+      - name: Archive site content
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          filename: 'site.zip'
 
   build-project:
     name: Build Project
