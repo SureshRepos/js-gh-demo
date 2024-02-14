@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Download Site Content
-        uses: actions/download-artifact@master
+        uses: actions/download-artifact@v2
         with:
           name: static-site
       - name: Display structure of download files
